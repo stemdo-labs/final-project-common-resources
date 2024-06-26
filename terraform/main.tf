@@ -83,12 +83,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
     admin_group_object_ids = var.list_aad_group_ids
   }
 
-  network_profile {
-    network_plugin = "azure"
-    service_cidr   = "10.0.4.0/24"
-    dns_service_ip = "10.0.4.10"
-  }
-
   identity {
     type = "SystemAssigned"
   }
