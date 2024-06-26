@@ -1,0 +1,15 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  namespace: ns-plopez
+  name: ns-plopez-admin
+rules:
+- apiGroups: ["","apps", "storage.k8s.io"]
+  resources: ["deployments", "pods", "pods/log", "pods/exec", "pods/portforward", "secrets", "configmaps", "services", "persistencevolume", "persistentvolumeclaims", "storageclasses"]
+  verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+- apiGroups: [""]
+  resources: ["namespaces"]
+  verbs: ["list", "watch"]
+- apiGroups: [""]
+  resources: ["events"]
+  verbs: ["get", "list", "watch"]  
