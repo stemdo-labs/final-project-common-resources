@@ -6,12 +6,12 @@ terraform {
     }
   }
 
-  backend "azurerm" {
+/*   backend "azurerm" {
     resource_group_name  = "xxx"
     storage_account_name = "xxx"
     container_name       = "xxx"
     key                  = "xxx"
-  }
+  } */
 }
 
 provider "azurerm" {
@@ -47,7 +47,7 @@ resource "azurerm_subnet" "sn" {
 
 #AKS
 resource "azurerm_kubernetes_cluster" "aks" {
-  depends_on = [azurerm_subnet.subnet.sn]
+  depends_on = [azurerm_subnet.sn]
 
   name                              = var.AKS_name
   location                          = var.location
