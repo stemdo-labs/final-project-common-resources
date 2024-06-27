@@ -8,9 +8,9 @@ terraform {
 
 
    backend "azurerm" {
-    resource_group_name  = "final-project-common-resources"
-    storage_account_name = "finalcommonresources"
-    container_name       = "finalcommonresourcescont"
+    resource_group_name  =  var.RG_name
+    storage_account_name = "finalcommonsta"
+    container_name       = "finalcommoncont"
     key                  = "tfstateaks"
   } 
 }

@@ -1,6 +1,6 @@
 #Common vars
-RG_name  = "final-project-common-resources"
-location = "west europe"
+RG_name  = "final-project-common"
+location = "UK South"
 
 # Network vars
 vnet_name          = "vnet-common-bootcamp"
