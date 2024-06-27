@@ -55,7 +55,8 @@ list_aad_group_ids = ["bd07ef0d-c219-47f3-9ee5-67a9b0f76bf3"]
 cluster_user_group_oids = [
 
   # SP propio del aks
-  ["4a892536-23a1-427e-ac56-bebc3758e7c0", "Azure Kubernetes Service RBAC Cluster Admin"],
+  # ["4a892536-23a1-427e-ac56-bebc3758e7c0", "Azure Kubernetes Service RBAC Cluster Admin"],
+  ["95dcb076-cc08-492b-bd81-a3f9ef507be4", "Azure Kubernetes Service RBAC Cluster Admin"],
 
   # sabreu 
   ["bd07ef0d-c219-47f3-9ee5-67a9b0f76bf3", "Azure Kubernetes Service RBAC Cluster Admin"]

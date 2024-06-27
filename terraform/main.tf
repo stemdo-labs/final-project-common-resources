@@ -107,6 +107,6 @@ resource "azurerm_role_assignment" "aks_cluster_users" {
   role_definition_name = var.cluster_user_group_oids[count.index][1]
   principal_id        = var.cluster_user_group_oids[count.index][0]
    timeouts {
-    create = "10m"
+    create = "5m"
   }
 }
