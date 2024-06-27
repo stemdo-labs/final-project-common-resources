@@ -48,8 +48,8 @@ agent_pool_os_disk_size = 64
 a_zones                 = ["1"]
 
 
-app_id = xxxx
-client_secret = xxxx
+# app_id = xxxx
+# client_secret = xxxx
 list_aad_group_ids = ["bd07ef0d-c219-47f3-9ee5-67a9b0f76bf3"]
 
 cluster_user_group_oids = [
