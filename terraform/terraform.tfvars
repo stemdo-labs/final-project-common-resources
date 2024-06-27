@@ -30,7 +30,7 @@ subnets = {
   }
   sn6 = {
     name             = "sn-plopez"
-    address_prefixes = ["10.0.5.0/24"]
+    address_prefixes = ["10.0.6.0/24"]
   }
 }
 
