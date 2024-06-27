@@ -6,12 +6,13 @@ terraform {
     }
   }
 
-/*   backend "azurerm" {
-    resource_group_name  = "xxx"
-    storage_account_name = "xxx"
-    container_name       = "xxx"
-    key                  = "xxx"
-  } */
+
+   backend "azurerm" {
+    resource_group_name  = "final-project-common-resources"
+    storage_account_name = "finalcommonresources"
+    container_name       = "finalcommonresourcescont"
+    key                  = "tfstateaks"
+  } 
 }
 
 provider "azurerm" {
