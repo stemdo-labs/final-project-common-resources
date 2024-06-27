@@ -11,25 +11,33 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v2
       
-    - name: Install kubelogin
-      run: az aks install-cli
+    - name: Set up kubelogin for non-interactive login
+      uses: azure/use-kubelogin@v1
+      with:
+         kubelogin-version: 'v0.0.24'
 
     - name: Set up Azure CLI
       uses: azure/login@v1
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Get AKS credentials
-      run: az aks get-credentials --resource-group final-project-common --name aksbootcampwe01
-    
     - uses: azure/aks-set-context@v3
       with:
         resource-group: 'final-project-common'
         cluster-name: 'aksbootcampwe01'
-
-
+        admin: 'false'
+        use-kubelogin: 'true'
+      
     - name: Deploy to AKS
-      run: |
-        kubectl apply -f k8s/jbeltran
+      run: kubectl apply -f k8s/jbeltran
+    # - name: Get AKS credentials
+    #   run: az aks get-credentials --resource-group final-project-common --name aksbootcampwe01
+    
+    # - uses: azure/aks-set-context@v3
+    #   with:
+    #     resource-group: 'final-project-common'
+    #     cluster-name: 'aksbootcampwe01'
+
+
 
 
