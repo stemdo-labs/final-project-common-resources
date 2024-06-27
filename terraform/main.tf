@@ -70,6 +70,19 @@ resource "azurerm_kubernetes_cluster" "aks" {
 
   }
 
+    network_profile {
+    network_plugin      = "azure"
+    network_plugin_mode = "Overlay"
+    outbound_type       = "loadBalancer"
+    network_policy      = "calico"
+    #ebpf_data_plane     = "cilium"
+    dns_service_ip     = "172.16.0.10"
+    #docker_bridge_cidr = ""
+    load_balancer_sku  = "standard"
+    service_cidr       = "172.16.0.0/16"
+    pod_cidr           = "172.26.0.0/16" 
+  }
+
   service_principal {
     client_id     = var.app_id
     client_secret = var.client_secret
