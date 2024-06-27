@@ -117,3 +117,9 @@ variable "list_aad_group_ids" {
   description = "Object Id of Azure Active Directory Groups which should have Admin Role on the Cluster."
   default     = []
 }
+
+variable "cluster_user_group_oids" {
+  type    = list(list(string))
+  default = [[]]
+  description = "The group ObjectId and the name of the role that you want to assign"
+}

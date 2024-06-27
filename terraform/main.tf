@@ -89,3 +89,14 @@ resource "azurerm_kubernetes_cluster" "aks" {
   }
 
 }
+
+
+ resource "azurerm_role_assignment" "aks_cluster_users" {
+  count               = length(var.cluster_user_group_oids)
+  scope               = azurerm_kubernetes_cluster.aks.id
+  role_definition_name = var.cluster_user_group_oids[count.index][1]
+  principal_id        = var.cluster_user_group_oids[count.index][0]
+   timeouts {
+    create = "10m"
+  }
+}

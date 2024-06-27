@@ -1,5 +1,5 @@
 #Common vars
-RG_name  = "RG-Common-Resources-Bootcamp"
+RG_name  = "final-project-common-resources"
 location = "west europe"
 
 # Network vars
@@ -50,4 +50,15 @@ a_zones                 = ["1"]
 
 app_id = xxxx
 client_secret = xxxx
-list_aad_group_ids = ["xxx", "xxx"]
+list_aad_group_ids = ["bd07ef0d-c219-47f3-9ee5-67a9b0f76bf3"]
+
+cluster_user_group_oids = [
+
+  # SP propio del aks
+  ["4a892536-23a1-427e-ac56-bebc3758e7c0", "Azure Kubernetes Service RBAC Cluster Admin"],
+
+  # sabreu 
+  ["bd07ef0d-c219-47f3-9ee5-67a9b0f76bf3", "Azure Kubernetes Service RBAC Cluster Admin"]
+
+
+]
