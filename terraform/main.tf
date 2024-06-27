@@ -20,13 +20,9 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "RG" {
-  name     = var.RG_name
-  location = var.location
-}
+
 
 resource "azurerm_virtual_network" "vnet" {
-  depends_on = [azurerm_resource_group.RG]
 
   name                = var.vnet_name
   location            = var.location
