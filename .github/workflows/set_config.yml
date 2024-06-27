@@ -10,6 +10,9 @@ jobs:
     steps:
     - name: Checkout code
       uses: actions/checkout@v2
+      
+    - name: Install kubelogin
+      run: az aks install-cli
 
     - name: Set up Azure CLI
       uses: azure/login@v1
@@ -24,8 +27,6 @@ jobs:
         resource-group: 'final-project-common'
         cluster-name: 'aksbootcampwe01'
 
-    - name: Install kubelogin
-      run: az aks install-cli
 
     - name: Deploy to AKS
       run: |
