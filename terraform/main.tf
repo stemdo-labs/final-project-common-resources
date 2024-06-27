@@ -85,14 +85,14 @@ resource "azurerm_kubernetes_cluster" "aks" {
     azure_rbac_enabled = true
   }
 
-  identity {
-    type = "SystemAssigned"
-  }
+  # identity {
+  #   type = "SystemAssigned"
+  # }
 
 }
 
 
- resource "azurerm_role_assignment" "aks_cluster_users" {
+resource "azurerm_role_assignment" "aks_cluster_users" {
   count               = length(var.cluster_user_group_oids)
   scope               = azurerm_kubernetes_cluster.aks.id
   role_definition_name = var.cluster_user_group_oids[count.index][1]
