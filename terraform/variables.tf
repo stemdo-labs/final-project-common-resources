@@ -29,7 +29,7 @@ variable "vnet_address_space" {
 variable "subnets" {
   type = map(object({
     name                 = string
-    virtual_network_name = string
+    # virtual_network_name = string
     address_prefixes     = list(string)
   }))
 }
