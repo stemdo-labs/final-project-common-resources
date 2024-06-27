@@ -17,9 +17,14 @@ jobs:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
     - name: Get AKS credentials
-      run: az aks get-credentials --resource-group final-project-common --name aksbootcampwe01 
+      run: az aks get-credentials --resource-group final-project-common --name aksbootcampwe01
+    
+    - uses: azure/aks-set-context@v3
+      with:
+        resource-group: 'final-project-common'
+        cluster-name: 'aksbootcampwe01'
 
-    - name: Get AKS credentials
+    - name: Install kubelogin
       run: az aks install-cli
 
     - name: Deploy to AKS
