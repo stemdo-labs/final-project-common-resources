@@ -36,7 +36,7 @@ subnets = {
 
 # AKS vars
 AKS_name           = "aksbootcampwe01"
-kubernetes_version = "1.25.6"
+kubernetes_version = "1.28.5"
 sku_tier           = "Free"
 
 # Agent pool profile ####
