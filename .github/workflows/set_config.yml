@@ -16,13 +16,11 @@ jobs:
       with:
         creds: ${{ secrets.AZURE_CREDENTIALS }}
 
-    - name: Azure AKS Set up
-      id: aks-setup
-      uses: azure/aks-set-context@v1
-      with:
-        resource-group: final-project-common
-        cluster-name: aksbootcampwe01
+    - name: Get AKS credentials
+      run: az aks get-credentials --resource-group final-project-common --name aksbootcampwe01
 
     - name: Deploy to AKS
       run: |
         kubectl apply -f k8s/jbletran
+
+
