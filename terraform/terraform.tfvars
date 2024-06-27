@@ -10,27 +10,27 @@ vnet_address_space = ["10.0.0.0/16"]
 subnets = {
   sn1 = {
     name             = "sn-common-aks-project"
-    address_prefixes = ["10.0.0.0/24"]
+    address_prefixes = ["10.0.25.0/24"]
   }
   sn2 = {
     name             = "sn-palonso"
-    address_prefixes = ["10.0.1.0/24"]
+    address_prefixes = ["10.0.26.0/24"]
   }
   sn3 = {
     name             = "sn-dnavarro"
-    address_prefixes = ["10.0.2.0/24"]
+    address_prefixes = ["10.0.27.0/24"]
   }
   sn4 = {
     name             = "sn-icasado"
-    address_prefixes = ["10.0.3.0/24"]
+    address_prefixes = ["10.0.28.0/24"]
   }
   sn5 = {
     name             = "sn-eperez"
-    address_prefixes = ["10.0.4.0/24"]
+    address_prefixes = ["10.0.29.0/24"]
   }
   sn6 = {
     name             = "sn-plopez"
-    address_prefixes = ["10.0.6.0/24"]
+    address_prefixes = ["10.0.30.0/24"]
   }
 }
 
