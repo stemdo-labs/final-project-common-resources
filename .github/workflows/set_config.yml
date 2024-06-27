@@ -1,0 +1,28 @@
+name: Deploy to AKS
+
+on:
+  workflow_dispatch:
+
+jobs:
+  deploy-k8s:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Azure CLI
+      uses: azure/login@v1
+      with:
+        creds: ${{ secrets.AZURE_CREDENTIALS }}
+
+    - name: Azure AKS Set up
+      id: aks-setup
+      uses: azure/aks-set-context@v1
+      with:
+        resource-group: final-project-common
+        cluster-name: aksbootcampwe01
+
+    - name: Deploy to AKS
+      run: |
+        kubectl apply -f k8s/
