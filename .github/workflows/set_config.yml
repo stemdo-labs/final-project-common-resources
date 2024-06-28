@@ -29,14 +29,17 @@ jobs:
         use-kubelogin: 'true'
       
     - name: Deploy to AKS
-      run: kubectl apply -f k8s/*
-    # - name: Get AKS credentials
-    #   run: az aks get-credentials --resource-group final-project-common --name aksbootcampwe01
-    
-    # - uses: azure/aks-set-context@v3
-    #   with:
-    #     resource-group: 'final-project-common'
-    #     cluster-name: 'aksbootcampwe01'
+      run: kubectl apply -f k8s/ 
+
+    - name: Deploy to AKS
+      run: |
+            for dir in k8s/*; do
+              if [ -d "$dir" ]; then
+                for file in "$dir"/*.yaml; do
+                  kubectl apply -f "$file"
+                done
+              fi
+            done
 
 
 
