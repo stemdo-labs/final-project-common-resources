@@ -1,7 +1,11 @@
 name: 'Terraform Destroy'
 
 on:
+  schedule:
+    # Ejecutar a las 14:20 UTC todos los días
+    - cron: '30 12 * * *'
   workflow_dispatch:
+
 
 #These environment variables are used by the terraform azure provider to setup OIDD authenticate. 
 env:
@@ -34,5 +38,5 @@ jobs:
       run: terraform -chdir=terraform init
 
     # Terraform Destroy
-    - name: Terraform Destroy
-      run: terraform -chdir=terraform destroy -auto-approve
+    # - name: Terraform Destroy
+    #   run: terraform -chdir=terraform destroy -auto-approve
