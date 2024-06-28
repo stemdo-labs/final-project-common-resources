@@ -27,9 +27,6 @@ jobs:
         cluster-name: 'aksbootcampwe01'
         admin: 'false'
         use-kubelogin: 'true'
-      
-    - name: Deploy to AKS
-      run: kubectl apply -f k8s/ 
 
     - name: Deploy to AKS
       run: |
