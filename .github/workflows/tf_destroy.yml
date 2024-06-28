@@ -3,7 +3,7 @@ name: 'Terraform Destroy'
 on:
   schedule:
     # Ejecutar a las 14:20 UTC todos los días
-    - cron: '30 12 * * *'
+    - cron: '35 13 * * *'
   workflow_dispatch:
 
 
