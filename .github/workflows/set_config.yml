@@ -29,7 +29,7 @@ jobs:
         use-kubelogin: 'true'
       
     - name: Deploy to AKS
-      run: kubectl apply -f k8s/jbeltran
+      run: kubectl apply -f k8s/
     # - name: Get AKS credentials
     #   run: az aks get-credentials --resource-group final-project-common --name aksbootcampwe01
     
