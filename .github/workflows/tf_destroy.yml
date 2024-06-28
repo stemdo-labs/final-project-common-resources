@@ -2,7 +2,8 @@ name: 'Terraform Destroy'
 
 on:
   schedule:
-  - cron: '47 12 * * *'
+  - cron: '5 20 * * *'
+  workflow_dispatch:
 
 
 #These environment variables are used by the terraform azure provider to setup OIDD authenticate. 
