@@ -60,7 +60,7 @@ cluster_user_group_oids = [
   # sabreu 
   ["bd07ef0d-c219-47f3-9ee5-67a9b0f76bf3", "Azure Kubernetes Service RBAC Cluster Admin"],
 
-  ["bd07ef0d-c219-47f3-9ee5-67a9b0f76bf3", "Azure Kubernetes Service RBAC Cluster Admin"]
+  # ["bd07ef0d-c219-47f3-9ee5-67a9b0f76bf3", "Azure Kubernetes Service RBAC Cluster Admin"]
 
 
 ]

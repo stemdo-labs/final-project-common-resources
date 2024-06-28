@@ -53,6 +53,7 @@ resource "azurerm_kubernetes_cluster" "aks" {
   dns_prefix                        = var.dns_prefix
   sku_tier                          = var.sku_tier
   role_based_access_control_enabled = true
+  local_account_disabled            = true
 
   default_node_pool {
     name                 = var.agent_pool_name
