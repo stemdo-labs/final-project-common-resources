@@ -17,7 +17,7 @@ subnets = {
     address_prefixes = ["10.0.26.0/24"]
   }
   sn3 = {
-    name             = "sn-dnavarro"
+    name             = "sn-dnazareno"
     address_prefixes = ["10.0.27.0/24"]
   }
   sn4 = {
