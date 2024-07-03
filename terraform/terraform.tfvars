@@ -32,6 +32,10 @@ subnets = {
     name             = "sn-plopez"
     address_prefixes = ["10.0.30.0/24"]
   }
+  sn7 = {
+    name             = "sn-lcabrita"
+    address_prefixes = ["10.0.31.0/24"]
+  }
 }
 
 # AKS vars
