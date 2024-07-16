@@ -5,6 +5,7 @@ on:
     workflows: ["Terraform Apply"]
     types:
       - completed
+  workflow_dispatch:
 
 jobs:
   deploy-k8s:
@@ -32,7 +33,7 @@ jobs:
         admin: 'false'
         use-kubelogin: 'true'
 
-    - name: Deploy to AKS
+    - name: Deploy service accounts to AKS
       run: |
             for dir in k8s/*; do
               if [ -d "$dir" ]; then
@@ -41,7 +42,9 @@ jobs:
                 done
               fi
             done
-
-
+    - name: Deploy Argocd to AKS
+      run: |
+            helm repo add argo https://argoproj.github.io/argo-helm
+            helm upgrade argo argo/argo-cd -n argo --create-namespace
 
 
