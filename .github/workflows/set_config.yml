@@ -45,6 +45,6 @@ jobs:
     - name: Deploy Argocd to AKS
       run: |
             helm repo add argo https://argoproj.github.io/argo-helm
-            helm upgrade argo argo/argo-cd -n argo --create-namespace
+            helm upgrade argo argo/argo-cd -n argo --install --create-namespace
 
 
