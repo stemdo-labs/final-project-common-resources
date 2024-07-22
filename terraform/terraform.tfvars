@@ -38,7 +38,7 @@ subnets = {
   }
   sn8 = {
     name             = "sn-ralonso"
-    address_prefixes = ["10.0.31.0/24"]
+    address_prefixes = ["10.0.32.0/24"]
   }
 }
 
