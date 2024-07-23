@@ -3,7 +3,7 @@ kind: ClusterRole
 metadata:
   name: storageclass-reader
 rules:
-  - apiGroups: [""] 
+  - apiGroups: [""]
     resources:
       - pods
       - services
@@ -21,6 +21,9 @@ rules:
       - namespaces
       - namespaces/status
       - namespaces/finalize
+    verbs: ["get", "watch", "list"]
+
+
   - apiGroups:
       - apps
       - extensions
@@ -30,7 +33,9 @@ rules:
       - rbac.authorization.k8s.io
       - networking.k8s.io
       - storage.k8s.io
-    resources: ["*"]  
+    resources: ["*"]
+    verbs: ["get", "watch", "list"]
+
   - apiGroups: ["storage.k8s.io"]
     resources: ["storageclasses"]
-  verbs: ["get", "watch", "list"]
+    verbs: ["get", "watch", "list"]
