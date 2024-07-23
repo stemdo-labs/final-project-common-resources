@@ -3,6 +3,34 @@ kind: ClusterRole
 metadata:
   name: storageclass-reader
 rules:
-- apiGroups: ["", "storage.k8s.io"]
-  resources: ["storageclasses", "persistentvolumes"]
+  - apiGroups: [""] 
+    resources:
+      - pods
+      - services
+      - endpoints
+      - configmaps
+      - persistentvolumeclaims
+      - persistentvolumes
+      - replicationcontrollers
+      - replicationcontrollers/status
+      - resourcequotas
+      - resourcequotas/status
+      - serviceaccounts
+      - nodes
+      - nodes/proxy
+      - namespaces
+      - namespaces/status
+      - namespaces/finalize
+  - apiGroups:
+      - apps
+      - extensions
+      - batch
+      - autoscaling
+      - policy
+      - rbac.authorization.k8s.io
+      - networking.k8s.io
+      - storage.k8s.io
+    resources: ["*"]  
+  - apiGroups: ["storage.k8s.io"]
+    resources: ["storageclasses"]
   verbs: ["get", "watch", "list"]
